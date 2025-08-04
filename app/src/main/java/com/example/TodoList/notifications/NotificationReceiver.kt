@@ -19,7 +19,7 @@ class NotificationReceiver : BroadcastReceiver() {
 
         Log.d("NotificationReceiver", "Broadcast received! Title: $title, Message: $message")
 
-        // Create Notification Channel for Android 8+
+        
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 "task_channel",
@@ -32,15 +32,15 @@ class NotificationReceiver : BroadcastReceiver() {
             manager.createNotificationChannel(channel)
         }
 
-        // Build Notification
+        
         val builder = NotificationCompat.Builder(context, "task_channel")
-            .setSmallIcon(R.drawable.ic_notification) // Use your actual icon here
+            .setSmallIcon(R.drawable.ic_notification) 
             .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
 
-        // Show notification
+        
         with(NotificationManagerCompat.from(context)) {
             notify(System.currentTimeMillis().toInt(), builder.build())
         }
