@@ -61,10 +61,10 @@ class AddTaskFragment : Fragment() {
         binding.spinnerPriority.adapter = adapter
 
         currentTask = args.task
-        val dueDateArg = args.dueDate // 🆕 Optional dueDate passed from Calendar
+        val dueDateArg = args.dueDate 
 
         if (currentTask != null) {
-            // 📝 Editing existing task
+           
             currentTask?.let { task ->
                 binding.editTextTitle.setText(task.title)
                 binding.editTextDescription.setText(task.description)
@@ -76,7 +76,7 @@ class AddTaskFragment : Fragment() {
                 }
             }
         } else if (dueDateArg != 0L.toLong()) {
-            // 📅 Add task with pre-filled date from CalendarFragment
+            
             dueDate = dueDateArg
             binding.textViewDueDate.text = dateFormat.format(Date(dueDateArg))
         }
