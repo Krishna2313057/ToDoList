@@ -36,12 +36,12 @@ class TaskAdapter(
             textViewDescription.text = task.description
             textViewPriority.text = task.priority
 
-            // Apply strike-through if task is completed
+            
             val paintFlags = if (task.isCompleted) Paint.STRIKE_THRU_TEXT_FLAG else 0
             textViewTitle.paintFlags = paintFlags
             textViewDescription.paintFlags = paintFlags
 
-            // Set priority text color
+            
             val priorityColor = when (task.priority.lowercase()) {
                 "high" -> R.color.priority_high
                 "medium" -> R.color.priority_medium
@@ -52,14 +52,14 @@ class TaskAdapter(
                 ContextCompat.getColor(root.context, priorityColor)
             )
 
-            // Handle delete icon click
+            
             imageViewDelete.setOnClickListener {
                 if (bindingAdapterPosition != RecyclerView.NO_POSITION) {
                     onDeleteClick(task)
                 }
             }
 
-            // Handle item click
+            
             root.setOnClickListener {
                 if (bindingAdapterPosition != RecyclerView.NO_POSITION) {
                     onItemClick(task)
