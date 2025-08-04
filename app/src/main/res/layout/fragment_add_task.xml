@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Task Title -->
+        
         <EditText
             android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:padding="12dp"
             android:background="@android:drawable/editbox_background" />
 
-        <!-- Task Description -->
+        
         <EditText
             android:id="@+id/editTextDescription"
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:background="@android:drawable/editbox_background"
             android:layout_marginTop="12dp" />
 
-        <!-- Task Completed Checkbox -->
+        
         <CheckBox
             android:id="@+id/checkboxCompleted"
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:text="Task Completed"
             android:layout_marginTop="16dp" />
 
-        <!-- Priority Label -->
+        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,13 +49,13 @@
             android:textStyle="bold"
             android:layout_marginTop="16dp" />
 
-        <!-- Priority Spinner -->
+        
         <Spinner
             android:id="@+id/spinnerPriority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!-- Due Date Label -->
+        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
             android:textStyle="bold"
             android:layout_marginTop="16dp" />
 
-        <!-- Due Date Display -->
+        
         <TextView
             android:id="@+id/textViewDueDate"
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:focusable="true"
             android:layout_marginTop="4dp" />
 
-        <!-- Save Button -->
+        
         <Button
             android:id="@+id/buttonSaveTask"
             android:layout_width="match_parent"
