@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/homeFragment">
 
-    <!-- 🏠 Home Fragment -->
+    
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.TodoList.ui.fragments.HomeFragment"
@@ -24,14 +24,14 @@
             app:popUpToInclusive="false" />
     </fragment>
 
-    <!-- 📝 Add Task Fragment -->
+    
     <fragment
         android:id="@+id/addTaskFragment"
         android:name="com.example.TodoList.ui.fragments.AddTaskFragment"
         android:label="Add/Edit Task"
         tools:layout="@layout/fragment_add_task">
 
-        <!-- ✅ Fix: Correct nullable attribute -->
+        
         <argument
             android:name="task"
             app:argType="com.example.todolist.model.Task"
@@ -43,7 +43,7 @@
             app:nullable="true" />
     </fragment>
 
-    <!-- 🗓️ Calendar Fragment -->
+    
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.TodoList.ui.fragments.CalendarFragment"
