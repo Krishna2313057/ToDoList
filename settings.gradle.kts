@@ -9,7 +9,7 @@ pluginManagement {
         }
         gradlePluginPortal()
         mavenCentral()
-        maven("https://jitpack.io") // ✅ Add JitPack for plugin management (safe)
+        maven("https://jitpack.io") 
     }
     plugins {
         id("androidx.navigation.safeargs.kotlin") version "2.7.7"
@@ -22,7 +22,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
 
-        // ✅ ADD THIS:
+        
         maven(url = "https://jitpack.io")
     }
 }
