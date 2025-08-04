@@ -85,7 +85,7 @@ class CalendarFragment : Fragment() {
             }
         }
 
-        // 🔄 Observe filteredTasks and show them
+        
         viewModel.filteredTasks.observe(viewLifecycleOwner) { tasks ->
             if (tasks.isNotEmpty()) {
                 binding.textViewTasks.text = tasks.joinToString("\n") { "• ${it.title}" }
@@ -94,7 +94,7 @@ class CalendarFragment : Fragment() {
             }
         }
 
-        // ✅ Add Task button click: navigate with selected date
+        
         binding.buttonAddTask.setOnClickListener {
             selectedDate?.let { date ->
                 val millis = date.atStartOfDay().toInstant(java.time.ZoneOffset.UTC).toEpochMilli()
