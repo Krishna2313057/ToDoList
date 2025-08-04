@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <!-- 🏠 Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.TodoList.ui.fragments.HomeFragment"
+        android:label="Tasks"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <!-- 📝 Add Task Fragment -->
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.TodoList.ui.fragments.AddTaskFragment"
+        android:label="Add/Edit Task"
+        tools:layout="@layout/fragment_add_task">
+
+        <!-- ✅ Fix: Correct nullable attribute -->
+        <argument
+            android:name="task"
+            app:argType="com.example.todolist.model.Task"
+            app:nullable="true" />
+
+        <argument
+            android:name="dueDate"
+            app:argType="long?"
+            app:nullable="true" />
+    </fragment>
+
+    <!-- 🗓️ Calendar Fragment -->
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.TodoList.ui.fragments.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar">
+
+        <action
+            android:id="@+id/action_calendarFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+    </fragment>
+</navigation>
