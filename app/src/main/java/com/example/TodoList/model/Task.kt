@@ -21,7 +21,7 @@ data class Task(
 
     val description: String = "",
 
-    val priority: Priority = Priority.LOW, // Use ENUM not String
+    val priority: Priority = Priority.LOW, 
 
     val isCompleted: Boolean = false,
 
