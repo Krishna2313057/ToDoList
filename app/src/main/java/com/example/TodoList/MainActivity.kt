@@ -20,30 +20,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // ✅ Fix: Make app respect system bars
+        
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
-        // ✅ Inflate layout using ViewBinding
+        
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✅ Setup Toolbar
+        
         setSupportActionBar(binding.toolbar)
 
-        // ✅ Setup Navigation Component
+        
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
 
-        // ✅ Create Notification Channel
+        
         NotificationHelper.createNotificationChannel(this)
 
-        // ✅ Request Notification Permission (Android 13+)
+        
         requestNotificationPermissionIfNeeded()
     }
 
-    // 🔔 Request permission if on Android 13+
+    
     private fun requestNotificationPermissionIfNeeded() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
             ContextCompat.checkSelfPermission(
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 🔁 Handle "Up" navigation in ActionBar
+    
     override fun onSupportNavigateUp(): Boolean {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
