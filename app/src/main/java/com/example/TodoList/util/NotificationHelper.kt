@@ -12,7 +12,7 @@ object NotificationHelper {
 
     private const val CHANNEL_ID = "task_reminder_channel"
 
-    // ✅ Create notification channel for Android O+
+    
     fun createNotificationChannel(context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Task Reminders"
@@ -28,15 +28,15 @@ object NotificationHelper {
         }
     }
 
-    // ✅ Show notification
+    
     fun showNotification(context: Context, title: String, message: String) {
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_notification) // You must have this in res/drawable
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
 
-        // ✅ Send notification using NotificationManagerCompat
+       
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(System.currentTimeMillis().toInt(), builder.build())
     }
