@@ -1,4 +1,4 @@
-// Theme.kt
+
 package com.example.TodoList.ui.theme
 
 import android.os.Build
@@ -41,7 +41,7 @@ fun ToDoListTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography, // ✅ FIXED (see next file)
+        typography = Typography, 
         content = content
     )
 }
