@@ -22,7 +22,7 @@ class TestNotificationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_notification)
 
-        // ✅ Request notification permission for Android 13+
+        
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
                 != PackageManager.PERMISSION_GRANTED
@@ -35,10 +35,10 @@ class TestNotificationActivity : AppCompatActivity() {
             }
         }
 
-        // ✅ Create notification channel
+       
         createNotificationChannel()
 
-        // ✅ Button click to show notification
+        
         val button = findViewById<Button>(R.id.button_send_notification)
         button.setOnClickListener {
             showNotification()
@@ -61,7 +61,7 @@ class TestNotificationActivity : AppCompatActivity() {
 
     private fun showNotification() {
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground) // ✅ Use a valid icon here
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Test Notification")
             .setContentText("This is a test notification!")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
