@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- 🔍 Search -->
+    
     <item
         android:id="@+id/action_search"
         android:title="Search"
@@ -10,21 +10,21 @@
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
-    <!-- 🌙 Theme Toggle -->
+    
     <item
         android:id="@+id/action_toggle_theme"
         android:title="Toggle Theme"
         android:icon="@drawable/ic_theme"
         app:showAsAction="ifRoom" />
 
-    <!-- 📅 Calendar -->
+    
     <item
         android:id="@+id/action_calendar"
         android:title="Calendar"
         android:icon="@android:drawable/ic_menu_my_calendar"
         app:showAsAction="ifRoom" />
 
-    <!-- ⚙️ Sort & Filter Options -->
+    
     <item
         android:id="@+id/action_sort_filter"
         android:title="Sort / Filter"
@@ -32,7 +32,7 @@
         app:showAsAction="never">
 
         <menu>
-            <!-- Sort Options -->
+           
             <item
                 android:id="@+id/sort_by_priority"
                 android:title="Sort by Priority" />
@@ -40,7 +40,7 @@
                 android:id="@+id/sort_by_due_date"
                 android:title="Sort by Due Date" />
 
-            <!-- Filter Options -->
+            
             <item
                 android:id="@+id/filter_completed"
                 android:title="Show Completed Tasks Only" />
