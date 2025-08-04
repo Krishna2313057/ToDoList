@@ -43,14 +43,14 @@ class HomeFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Tasks"
 
-        // 🔁 ViewModel setup
+        
         val application = requireNotNull(activity).application
         val dao = TaskDatabase.getDatabase(application).taskDao()
         val repository = TaskRepository(dao)
         val factory = TaskViewModelFactory(application, repository)
         taskViewModel = ViewModelProvider(this, factory)[TaskViewModel::class.java]
 
-        // 🧾 Adapter setup
+       
         taskAdapter = TaskAdapter(
             onDeleteClick = { task ->
                 taskViewModel.deleteTask(task)
@@ -63,26 +63,26 @@ class HomeFragment : Fragment() {
             }
         )
 
-        // 🧱 RecyclerView
+        
         binding.recyclerViewTasks.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = taskAdapter
         }
 
-        // 👀 Observe filtered tasks
+        
         taskViewModel.filteredTasks.observe(viewLifecycleOwner) { tasks ->
             taskAdapter.submitList(tasks)
             binding.textViewEmpty.visibility = if (tasks.isEmpty()) View.VISIBLE else View.GONE
         }
 
-        // ➕ FAB to add task
+       
         binding.fabAddTask.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToAddTaskFragment(null, null)
             findNavController().navigate(action)
 
         }
 
-        // 🍔 Menu
+       
         setupMenu()
     }
 
