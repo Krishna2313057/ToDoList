@@ -8,7 +8,7 @@ import com.kizitonwose.calendar.view.ViewContainer
 import java.time.LocalDate
 
 class MyDayViewContainer(view: View) : ViewContainer(view) {
-    // This must match the ID in calendar_day_layout.xml
+    
     val textView: TextView = view.findViewById(R.id.calendarDayText)
     var date: LocalDate? = null
 }
