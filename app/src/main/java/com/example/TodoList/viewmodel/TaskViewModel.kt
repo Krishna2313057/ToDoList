@@ -35,7 +35,7 @@ class TaskViewModel(
 
     fun setFilter(filter: TaskFilter) {
         _filter.value = filter
-        // If you're switching filters, clear search
+        
         if (filter != TaskFilter.ALL) {
             _searchQuery.value = ""
             _selectedDateMillis.value = null
