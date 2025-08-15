@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    
+    <item
+        android:id="@+id/action_search"
+        android:title="Search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    
+    <item
+        android:id="@+id/action_toggle_theme"
+        android:title="Toggle Theme"
+        android:icon="@drawable/ic_theme"
+        app:showAsAction="ifRoom" />
+
+
+    
+    <item
+        android:id="@+id/action_sort_filter"
+        android:title="Sort / Filter"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="never">
+
+        <menu>
+           
+            <item
+                android:id="@+id/sort_by_priority"
+                android:title="Sort by Priority" />
+            <item
+                android:id="@+id/sort_by_due_date"
+                android:title="Sort by Due Date" />
+
+            
+            <item
+                android:id="@+id/filter_completed"
+                android:title="Show Completed Tasks Only" />
+            <item
+                android:id="@+id/filter_incomplete"
+                android:title="Show Incomplete Tasks Only" />
+        </menu>
+    </item>
+</menu>
